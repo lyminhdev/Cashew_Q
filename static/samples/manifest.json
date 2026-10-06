@@ -1,0 +1,14 @@
+{"samples":[
+{"id":"tb-01","path":"/samples/tb-01.png","expected_class":"tb","display_name":"Tốt","detected_count":0,"predicted_class":"tb","confidence":0},
+{"id":"tb-02","path":"/samples/tb-02.png","expected_class":"tb","display_name":"Tốt","detected_count":0,"predicted_class":"tb","confidence":0},
+{"id":"loai1-01","path":"/samples/loai1-01.png","expected_class":"loai1","display_name":"Loại 1","detected_count":0,"predicted_class":"loai1","confidence":0},
+{"id":"loai1-02","path":"/samples/loai1-02.png","expected_class":"loai1","display_name":"Loại 1","detected_count":0,"predicted_class":"loai1","confidence":0},
+{"id":"loai2-01","path":"/samples/loai2-01.png","expected_class":"loai2","display_name":"Loại 2","detected_count":0,"predicted_class":"loai2","confidence":0},
+{"id":"loai2-02","path":"/samples/loai2-02.png","expected_class":"loai2","display_name":"Loại 2","detected_count":0,"predicted_class":"loai2","confidence":0},
+{"id":"loai3-01","path":"/samples/loai3-01.png","expected_class":"loai3","display_name":"Loại 3","detected_count":0,"predicted_class":"loai3","confidence":0},
+{"id":"loai3-02","path":"/samples/loai3-02.png","expected_class":"loai3","display_name":"Loại 3","detected_count":0,"predicted_class":"loai3","confidence":0},
+{"id":"lbw-01","path":"/samples/lbw-01.png","expected_class":"lbw","display_name":"LBW","detected_count":0,"predicted_class":"lbw","confidence":0},
+{"id":"lbw-02","path":"/samples/lbw-02.png","expected_class":"lbw","display_name":"LBW","detected_count":0,"predicted_class":"lbw","confidence":0},
+{"id":"bad-output-01","path":"/samples/bad-output-01.png","expected_class":"bad_output","display_name":"Lỗi","detected_count":0,"predicted_class":"bad_output","confidence":0},
+{"id":"bad-output-02","path":"/samples/bad-output-02.png","expected_class":"bad_output","display_name":"Lỗi","detected_count":0,"predicted_class":"bad_output","confidence":0}
+]}

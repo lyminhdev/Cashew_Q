@@ -53,3 +53,6 @@ README.roboflow.txt
 test_result.jpg
 __pycache__/
 *.pyc
+
+# Local Git worktrees used for isolated feature implementation
+.worktrees/
