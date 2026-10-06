@@ -21,10 +21,12 @@ app = FastAPI(title="Cashew QC API", version="1.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 _pipelines: dict = {}
+_BASE_DIR = Path(__file__).parent
+_EFFNET_PATH = _BASE_DIR / "efficientnet_cashew.pt"
+_RESNET_PATH = _BASE_DIR / "resnet50_cashew.pt"
 
 # ── Model registry ────────────────────────────────────────────────────────────
 def _model_registry():
-    from inference_pipeline import _EFFNET_PATH, _RESNET_PATH
     return [
         {
             "id":          "resnet50",
@@ -46,7 +48,6 @@ def _model_registry():
 
 
 def _default_model_id() -> str:
-    from inference_pipeline import _EFFNET_PATH
     return "efficientnet_b3" if _EFFNET_PATH.exists() else "resnet50"
 
 
@@ -73,22 +74,15 @@ def get_pipeline(model_id: str | None = None):
     return _pipelines[model_id], model_id
 
 
-@app.on_event("startup")
-async def _startup():
-    get_pipeline()  # preload default
-
-
 @app.get("/health")
 async def health():
-    import torch
-    p, mid = get_pipeline()
-    cuda = torch.cuda.is_available()
     return {
         "status":    "ok",
-        "device":    str(p.device),
-        "cuda":      cuda,
-        "gpu_name":  torch.cuda.get_device_name(0) if cuda else None,
-        "model":     mid,
+        "device":    "cpu",
+        "cuda":      False,
+        "gpu_name":  None,
+        "model":     _default_model_id(),
+        "model_loaded": bool(_pipelines),
     }
 
 
